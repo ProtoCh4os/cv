@@ -1,0 +1,58 @@
+<template>
+  <el-header class="header" height="80px">
+    <div class="nav">
+      <Logo class="logo" />
+      <el-tooltip effect="light" content="Github" placement="bottom">
+        <font-awesome-icon class="item" size="2x" :icon="['fab', 'github']" />
+      </el-tooltip>
+      <el-tooltip effect="light" content="LinkedIn" placement="bottom">
+        <font-awesome-icon class="item" size="2x" :icon="['fab', 'linkedin']" />
+      </el-tooltip>
+      <el-tooltip effect="light" content="Envie um E-mail" placement="bottom">
+        <font-awesome-icon class="item" size="2x" :icon="['fas', 'envelope']" />
+      </el-tooltip>
+      <el-tooltip effect="light" content="Baixar CV em PDF" placement="bottom">
+        <font-awesome-icon class="item" size="2x" :icon="['fas', 'download']" />
+      </el-tooltip>
+    </div>
+  </el-header>
+</template>
+
+<script>
+import Logo from "@/components/logo";
+
+export default {
+  name: "navbar",
+  components: {
+    Logo
+  }
+};
+</script>
+
+<style lang="sass">
+@import "@/assets/sass/app.sass"
+
+.header
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)
+    background: map-get($colors, default)
+
+.nav
+    height: 100%
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    max-width: map-get($screen, large)
+
+    .logo
+        padding: 5px
+        height: 70px
+        margin-right: auto
+        width: auto
+
+    .item
+        padding:  10px
+        height: 40px
+        width: auto
+        margin: auto 0
+</style>

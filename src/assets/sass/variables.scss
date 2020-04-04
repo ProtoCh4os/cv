@@ -1,0 +1,28 @@
+$globals: (
+  color: #e1b07e,
+  font-size: 14px
+);
+
+$screen: (
+  mobile: 768px,
+  small: 992px,
+  large: 1200px
+);
+
+$colors: (
+  primary: #05204a,
+  primary-alternative: #02394a,
+  primary-light: #5158bb,
+  default: #e1b07e,
+  default-light: #e0a060,
+  success: #e0c860,
+  danger: #991b1b
+);
+
+/* theme color */
+$--color-primary: #5158bb;
+
+/* icon font path, required */
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+
+@import "~element-ui/packages/theme-chalk/src/index";
