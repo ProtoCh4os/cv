@@ -4,7 +4,16 @@
 
 <script>
 export default {
-  name: "experience"
+  name: "experience",
+  props: {
+    data: {
+      type: Array,
+      required: true,
+      default: () => {
+        return [];
+      }
+    }
+  }
 };
 </script>
 

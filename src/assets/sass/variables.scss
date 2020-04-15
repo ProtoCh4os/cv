@@ -1,8 +1,3 @@
-$globals: (
-  color: #e1b07e,
-  font-size: 14px
-);
-
 $screen: (
   mobile: 768px,
   small: 992px,
@@ -10,13 +5,13 @@ $screen: (
 );
 
 $colors: (
-  primary: #05204a,
-  primary-alternative: #02394a,
-  primary-light: #5158bb,
-  default: #e1b07e,
-  default-light: #e0a060,
-  success: #e0c860,
-  danger: #991b1b
+  primary: #1a2227,
+  secondary: #29363c,
+  font: #ffffff,
+  success: #2dcf6a,
+  info: #40abad,
+  error: #e34247,
+  warning: #fae051
 );
 
 /* theme color */

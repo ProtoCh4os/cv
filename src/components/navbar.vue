@@ -1,18 +1,21 @@
 <template>
   <div class="nav">
     <Logo class="logo" />
-    <el-tooltip effect="light" content="Github" placement="bottom">
-      <font-awesome-icon class="item" size="2x" :icon="['fab', 'github']" />
-    </el-tooltip>
-    <el-tooltip effect="light" content="LinkedIn" placement="bottom">
-      <font-awesome-icon class="item" size="2x" :icon="['fab', 'linkedin']" />
-    </el-tooltip>
-    <el-tooltip effect="light" content="Envie um E-mail" placement="bottom">
-      <font-awesome-icon class="item" size="2x" :icon="['fas', 'envelope']" />
-    </el-tooltip>
-    <el-tooltip effect="light" content="Baixar CV em PDF" placement="bottom">
-      <font-awesome-icon class="item" size="2x" :icon="['fas', 'download']" />
-    </el-tooltip>
+    <a href="https://www.linkedin.com/in/victor-monteiro-cunha-aa6106160/" target="_blank" class="item">
+      <el-tooltip effect="light" content="LinkedIn" placement="bottom">
+        <font-awesome-icon size="2x" :icon="['fab', 'linkedin']" />
+      </el-tooltip>
+    </a>
+    <a href="mailto:victor.monteiro.cunha@gmail.com" target="_blank" class="item">
+      <el-tooltip effect="light" content="Envie um E-mail" placement="bottom">
+        <font-awesome-icon size="2x" :icon="['fas', 'envelope']" />
+      </el-tooltip>
+    </a>
+    <a href="/cv.pdf" target="_blank" class="item">
+      <el-tooltip effect="light" content="Baixar CV em PDF" placement="bottom">
+        <font-awesome-icon size="2x" :icon="['fas', 'download']" />
+      </el-tooltip>
+    </a>
   </div>
 </template>
 
@@ -27,7 +30,7 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import "@/assets/sass/app.sass"
 
 .nav
@@ -45,8 +48,8 @@ export default {
     width: auto
 
   .item
-    padding: 10px
-    height: 40px
+    padding: 0 20px
+    height: 30px
     width: auto
     margin: auto 0
 </style>

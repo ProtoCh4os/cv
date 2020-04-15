@@ -4,29 +4,39 @@
       <navbar />
     </el-header>
 
-    <el-main>
-      <intro />
-      <academy />
-      <experience />
-      <abilities />
+    <el-main class="body">
+      <intro :data="this.intro" />
+      <academy :data="this.academy" />
+      <experience :data="this.experience" />
+      <abilities :data="this.abilities" />
     </el-main>
 
-    <el-footer>
+    <el-footer class="footer">
       <page-footer />
     </el-footer>
   </div>
 </template>
 
 <script>
-import navbar from "@/components/navbar";
-import intro from "@/components/intro";
-import academy from "@/components/academy";
-import experience from "@/components/experience";
-import abilities from "@/components/abilities";
-import pageFooter from "@/components/pageFooter";
+import {
+  navbar,
+  intro,
+  academy,
+  experience,
+  abilities,
+  pageFooter
+} from "@/components";
+
+import { mapState } from "vuex";
 
 export default {
   name: "App",
+  computed: mapState({
+    intro: state => state.intro,
+    academy: state => state.academy,
+    experience: state => state.experience,
+    abilities: state => state.abilities
+  }),
   components: {
     navbar,
     intro,
@@ -39,9 +49,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import "./assets/sass/app.sass"
-
-.header
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)
-  background: map-get($colors, default)
+@import "@/assets/sass/app.sass"
 </style>

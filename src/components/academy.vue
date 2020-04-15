@@ -4,7 +4,16 @@
 
 <script>
 export default {
-  name: "academy"
+  name: "academy",
+  props: {
+    data: {
+      type: Array,
+      required: true,
+      default: () => {
+        return [];
+      }
+    }
+  }
 };
 </script>
 

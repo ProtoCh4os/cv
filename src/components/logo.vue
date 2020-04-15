@@ -70,7 +70,7 @@ export default {
 <style lang="sass" scoped>
 @import "@/assets/sass/app.sass"
 .logo-color-primary
-    fill: map-get($colors, primary)
+    fill: map-get($colors, success)
 .logo-color-secondary
-    fill: map-get($colors, primary-light)
+    fill: map-get($colors, warning)
 </style>
