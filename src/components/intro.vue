@@ -1,6 +1,5 @@
 <template>
   <div class="card">
-    <h1>cu</h1>
   </div>
 </template>
 
