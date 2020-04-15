@@ -1,5 +1,5 @@
 export default {
-  image: "",
+  image: "picture.png",
   name: "Victor Monteiro Cunha",
   birthday: new Date("06/02/1998"),
   email: "victor.monteiro.cunha@gmail.com",

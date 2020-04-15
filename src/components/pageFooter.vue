@@ -1,15 +1,15 @@
 <template>
   <div class="footer-nav">
     <a href="https://github.com/ProtoCh4os/cv" target="_blank" class="item">
-      <el-tooltip effect="light" content="Código fonte" placement="top">
+      <el-tooltip effect="dark" content="Código fonte" placement="top">
         <font-awesome-icon size="2x" :icon="['fas', 'file-code']" />
       </el-tooltip>
     </a>
-    <el-tooltip class="item" effect="light" content="Desenvolvido em VueJS" placement="top">
+    <el-tooltip class="item" effect="dark" content="Desenvolvido em VueJS" placement="top">
       <font-awesome-icon class="accent" size="2x" :icon="['fab', 'vuejs']" />
     </el-tooltip>
     <a href="https://github.com/ProtoCh4os/" target="_blank" class="item">
-      <el-tooltip effect="light" content="Github" placement="top">
+      <el-tooltip effect="dark" content="Github" placement="top">
         <font-awesome-icon size="2x" :icon="['fab', 'github']" />
       </el-tooltip>
     </a>
