@@ -49,22 +49,34 @@ export default {
       return `${da} / ${mo} / ${ye}`;
     },
     getAge() {
-        var ageDifMs = Date.now() - this.data.birthday.getTime();
-        var ageDate = new Date(ageDifMs);
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
+      var ageDifMs = Date.now() - this.data.birthday.getTime();
+      var ageDate = new Date(ageDifMs);
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
   }
 };
 </script>
 
 <style lang="sass" scoped>
+@import "@/assets/sass/app.sass"
+
 .card
   display: grid
   gap: 1rem
   grid-template-areas: 'picture heading heading' 'picture info-email info-address' 'picture info-phone info-birthday'
 
+  @include upto(mobile)
+    grid-template-areas: 'heading heading' 'info-email info-address' 'info-phone info-birthday'
+
+  @include upto(smallest)
+    grid-template-areas: 'heading' 'info-email' 'info-address' 'info-phone' 'info-birthday'
+    justify-content: center
+
   .picture
     grid-area: picture
+    @include upto(mobile)
+      display: none
+
   .heading
     grid-area: heading
   .info-email

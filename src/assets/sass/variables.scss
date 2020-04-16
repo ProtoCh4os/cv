@@ -1,8 +1,18 @@
 $screen: (
+  smallest: 572px,
   mobile: 768px,
   small: 992px,
   large: 1200px
 );
+
+@mixin upto($mq-breakpoint, $mq-breakpoints: $screen) {
+  @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+    $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+  }
+  @media screen and (max-width: #{$mq-breakpoint}) {
+    @content;
+  }
+}
 
 $colors: (
   primary: #1a2227,

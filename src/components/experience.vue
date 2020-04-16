@@ -40,11 +40,16 @@ export default {
 .card
   .place
     display: grid
-    grid-template-areas: 'picture company company start' 'picture position position end'
-    grid-template-columns: 120px repeat(3, auto)
+    grid-template-areas: 'picture company start' 'picture  position end'
+    grid-template-columns: 80px repeat(2, auto)
     gap: 1rem
     border-bottom: 1px solid map-get($colors, primary)
     padding: 20px 0
+    text-align: center
+
+    @include upto(smallest)
+      grid-template-areas: 'picture company' 'position position' 'start end'
+      grid-template-columns: auto auto
 
     &.first
       padding-top: 0
@@ -56,7 +61,7 @@ export default {
     .picture
       grid-area: picture
       img
-        width: 120px
+        width: 80px
 
     .company
       grid-area: company
@@ -75,4 +80,7 @@ export default {
     > *
       display: flex
       align-items: center
+
+      @include upto(smallest)
+        justify-content: center !important
 </style>

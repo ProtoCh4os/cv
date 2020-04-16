@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h2 class="heading">Experiência Profissional</h2>
+    <h2 class="heading">Habilidades</h2>
     <div class="card">
-      <div class="ability" v-for="(ability, index) in this.data" v-bind:key="index" 
+      <div
+        class="ability"
+        v-for="(ability, index) in this.data"
+        v-bind:key="index"
         :class="{'last' : index == data.length - 1, 'first' : index == 0}"
       >
         <font-awesome-icon class="icon" size="2x" :icon="ability.image" />
@@ -49,10 +52,11 @@ export default {
 
     .title
       grid-area: title
+      line-height: 22px
 
     .first
-      padding-top: 0;
+      padding-top: 0
 
     .last
-      padding-bottom: 0;
+      padding-bottom: 0
 </style>

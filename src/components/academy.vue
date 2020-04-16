@@ -5,7 +5,7 @@
       <div
         class="place"
         v-for="(place, index) in this.data"
-        v-bind:key="place.name"
+        v-bind:key="index"
         :class="{'last' : index == data.length - 1, 'first' : index == 0}"
       >
         <div class="picture">
@@ -46,6 +46,11 @@ export default {
     border-bottom: 1px solid map-get($colors, primary)
     padding: 20px 0
 
+    @include upto(smallest)
+      grid-template-areas: 'picture picture' 'name name' 'description description' 'start end'
+      grid-template-columns: auto auto
+      text-align: center
+
     &.first
       padding-top: 0
 
@@ -75,4 +80,7 @@ export default {
     > *
       display: flex
       align-items: center
+
+      @include upto(smallest)
+        justify-content: center !important
 </style>
