@@ -13,8 +13,8 @@
         </div>
         <h1 class="name">{{place.name}}</h1>
         <span class="description">{{place.description}}</span>
-        <i class="start">De: {{ place.start }}</i>
-        <i class="end">Até: {{ place.end }}</i>
+        <i class="start">De: {{ formatDate(place.start) }}</i>
+        <i class="end">Até: {{ formatDate(place.end) }}</i>
       </div>
     </div>
   </div>
@@ -30,6 +30,27 @@ export default {
       default: () => {
         return [];
       }
+    }
+  },
+  methods: {
+    formatDate(date) {
+      const meses = [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dec"
+      ];
+      const dateObj = new Date(date);
+      const month = dateObj.getMonth();
+      return meses[month] + "/" + dateObj.getFullYear();
     }
   }
 };

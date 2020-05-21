@@ -3,21 +3,21 @@
     <div class="card">
       <img class="picture" :src="data.image" alt="Image" />
       <h2 class="heading">{{ data.name }}</h2>
-      <div class="info-email">
-        <font-awesome-icon size="1x" :icon="['fas', 'envelope']" />
-        {{ data.email }}
+      <div class="info-email subdata">
+        <font-awesome-icon class="icon" size="2x" :icon="['fas', 'envelope']" />
+        <span class="text">{{ data.email }}</span>
       </div>
-      <div class="info-phone">
-        <font-awesome-icon size="1x" :icon="['fas', 'phone']" />
-        {{ data.phone }}
+      <div class="info-phone subdata">
+        <font-awesome-icon class="icon" size="2x" :icon="['fas', 'phone']" />
+        <span class="text">{{ data.phone }}</span>
       </div>
-      <div class="info-address">
-        <font-awesome-icon size="1x" :icon="['fas', 'map-marked-alt']" />
-        {{ data.address }}
+      <div class="info-address subdata">
+        <font-awesome-icon class="icon" size="2x" :icon="['fas', 'map-pin']" />
+        <span class="text">{{ data.address }}</span>
       </div>
-      <div class="info-birthday">
-        <font-awesome-icon size="1x" :icon="['fas', 'calendar']" />
-        {{ this.getBirthday() }} ({{ this.getAge() }} anos)
+      <div class="info-birthday subdata">
+        <font-awesome-icon class="icon" size="2x" :icon="['fas', 'calendar']" />
+        <span class="text">{{ this.getBirthday() }} ({{ this.getAge() }} anos)</span>
       </div>
     </div>
   </div>
@@ -63,12 +63,12 @@ export default {
 .card
   display: grid
   gap: 1rem
-  grid-template-areas: 'picture heading heading' 'picture info-email info-address' 'picture info-phone info-birthday'
+  grid-template-areas: 'picture heading heading heading' 'picture info-email info-email info-phone' 'picture info-address info-address info-birthday'
+
+  @include upto(small)
+    grid-template-areas: 'picture heading heading heading' 'picture info-email info-email info-email' 'picture info-address info-address info-address' 'picture info-phone info-birthday info-birthday'
 
   @include upto(mobile)
-    grid-template-areas: 'heading heading' 'info-email info-address' 'info-phone info-birthday'
-
-  @include upto(smallest)
     grid-template-areas: 'heading' 'info-email' 'info-address' 'info-phone' 'info-birthday'
     justify-content: center
 
@@ -79,6 +79,7 @@ export default {
 
   .heading
     grid-area: heading
+    font-size: 30px
   .info-email
     grid-area: info-email
   .info-phone
@@ -95,8 +96,19 @@ export default {
   img
     height: 200px
     width: 200px
+    margin: auto auto
 
   svg
     height: auto
-    margin: 0 10px
+    margin: 0 15px
+
+  .icon
+    text-align: center
+    width: 32px
+    max-height: 32px
+    @include upto(smallest)
+      width: 0.9rem
+
+  .subdata
+      justify-content: left
 </style>
