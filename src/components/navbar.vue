@@ -11,7 +11,7 @@
         <font-awesome-icon size="2x" :icon="['fas', 'envelope']" />
       </el-tooltip>
     </a>
-    <a href="/cv.pdf" target="_blank" class="item">
+    <a href="/cv/cv.pdf" target="_blank" class="item">
       <el-tooltip effect="dark" content="Baixar CV em PDF" placement="bottom">
         <font-awesome-icon size="2x" :icon="['fas', 'download']" />
       </el-tooltip>
