@@ -2,7 +2,7 @@ export default [
   {
     image: "experience.png",
     company: "Experience Soluções",
-    position: "Desenvolvedor JS Pleno",
+    position: "Desenvolvedor Junior II",
     start: "Wed, 01 Apr 2020 03:00:00 GMT",
     end: false
   },
