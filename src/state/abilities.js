@@ -35,7 +35,7 @@ export default [
   {
     image: ["fas", "cubes"],
     description:
-      'Projetos Open-Source, incluindo aplicações CLI e websites, disponíveis em minha página do <a href="https://github.com/ProtoCh4os">Github</a>'
+      'Projetos Open-Source, incluindo aplicações CLI e websites, disponíveis em minha página do <a target="_blank" href="https://github.com/ProtoCh4os">Github</a>'
   },
   {
     image: ["fas", "comments"],
