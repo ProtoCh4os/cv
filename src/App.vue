@@ -4,12 +4,13 @@
       <Navbar />
     </el-header>
 
-    <elmain class="body">
+    <el-main class="body">
       <Intro :data="this.intro" />
       <Academy :data="this.academy" />
       <Experience :data="this.experience" />
       <Abilities :data="this.abilities" />
-    </elmain>
+      <Signature />
+    </el-main>
 
     <el-footer class="footer">
       <PageFooter />
@@ -24,7 +25,8 @@ import {
   academy as Academy,
   experience as Experience,
   abilities as Abilities,
-  pageFooter as PageFooter
+  pageFooter as PageFooter,
+  signature as Signature
 } from "@/components";
 import state from "@/state";
 
@@ -41,7 +43,8 @@ export default {
     Academy,
     Experience,
     Abilities,
-    PageFooter
+    PageFooter,
+    Signature
   }
 };
 </script>

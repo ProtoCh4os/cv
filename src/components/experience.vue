@@ -74,7 +74,6 @@ export default {
           }
         }
       });
-      console.log(result);
       return result;
     },
     formatDate(date, last) {

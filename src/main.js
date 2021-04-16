@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 
+import { ObserveVisibility } from 'vue-observe-visibility'
 import ElementUI from "element-ui";
 import "./assets/sass/variables.scss";
 
@@ -16,6 +17,8 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+
+Vue.directive('observe-visibility', ObserveVisibility)
 
 new Vue({
   render: h => h(App)
