@@ -7,24 +7,25 @@
           class="place"
           v-for="(place, index) in this.data"
           :key="index"
-          :class="{'last' : index == data.length - 1, 'first' : index == 0}"
+          :class="{ last: index == data.length - 1, first: index == 0 }"
         >
           <div class="picture">
             <img :src="place.image" :alt="place.company" />
           </div>
-          <h1 class="company">{{place.company}}</h1>
-          <span class="position">{{place.position}}</span>
-          <i class="start">De: {{formatDate(place.start)}}</i>
-          <i class="end">Até: {{formatDate(place.end, true)}}</i>
+          <h1 class="company">{{ place.company }}</h1>
+          <span class="position">{{ place.position }}</span>
+          <i class="start">De: {{ formatDate(place.start) }}</i>
+          <i class="end">Até: {{ formatDate(place.end, true) }}</i>
         </div>
       </div>
       <el-timeline class="timeline">
         <el-timeline-item
           class="point"
-          v-for="(place,index) in getTimeline(this.data)"
+          v-for="(place, index) in getTimeline(this.data)"
           :key="index"
           :class="place.shrink"
-        >{{ formatDate(place.date, index === 0) }}</el-timeline-item>
+          >{{ formatDate(place.date, index === 0) }}</el-timeline-item
+        >
       </el-timeline>
     </div>
   </div>
@@ -95,7 +96,7 @@ export default {
         "Nov",
         "Dec"
       ];
-      const dateObj = new Date(date);
+      const dateObj = date instanceof Date ? date : new Date(date);
       const month = dateObj.getMonth();
       return meses[month] + "/" + dateObj.getFullYear();
     }

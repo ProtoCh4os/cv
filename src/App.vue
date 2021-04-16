@@ -1,49 +1,47 @@
 <template>
   <div id="app">
     <el-header class="header" height="80px">
-      <navbar />
+      <Navbar />
     </el-header>
 
-    <el-main class="body">
-      <intro :data="this.intro" />
-      <academy :data="this.academy" />
-      <experience :data="this.experience" />
-      <abilities :data="this.abilities" />
-    </el-main>
+    <elmain class="body">
+      <Intro :data="this.intro" />
+      <Academy :data="this.academy" />
+      <Experience :data="this.experience" />
+      <Abilities :data="this.abilities" />
+    </elmain>
 
     <el-footer class="footer">
-      <page-footer />
+      <PageFooter />
     </el-footer>
   </div>
 </template>
 
 <script>
 import {
-  navbar,
-  intro,
-  academy,
-  experience,
-  abilities,
-  pageFooter
+  navbar as Navbar,
+  intro as Intro,
+  academy as Academy,
+  experience as Experience,
+  abilities as Abilities,
+  pageFooter as PageFooter
 } from "@/components";
-
-import { mapState } from "vuex";
+import state from "@/state";
 
 export default {
   name: "App",
-  computed: mapState({
-    intro: state => state.intro,
-    academy: state => state.academy,
-    experience: state => state.experience,
-    abilities: state => state.abilities
-  }),
+  data() {
+    return {
+      ...state
+    };
+  },
   components: {
-    navbar,
-    intro,
-    academy,
-    experience,
-    abilities,
-    pageFooter
+    Navbar,
+    Intro,
+    Academy,
+    Experience,
+    Abilities,
+    PageFooter
   }
 };
 </script>
